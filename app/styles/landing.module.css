@@ -1,0 +1,102 @@
+/* app/styles/landing.module.css */
+.landingContainer {
+  overflow-x: hidden;
+  background: #f8fbff;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.heroSection {
+  position: relative;
+  padding: clamp(60px, 10vw, 120px) 0;
+  text-align: center;
+  background: linear-gradient(135deg, #1890ff 0%, #0050b3 100%);
+  color: white;
+  isolation: isolate;
+}
+
+.heroSection::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/noise.png') repeat;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+/* Feature Cards */
+.featureCard {
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  height: 100%;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+}
+
+/* Pricing Section */
+.pricingCard {
+  transition: all 0.3s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.pricingCard.recommended::before {
+  content: 'Most Popular';
+  position: absolute;
+  top: 0;
+  right: -30px;
+  background: #1890ff;
+  color: white;
+  padding: 4px 40px;
+  transform: rotate(45deg);
+  font-size: 0.75rem;
+}
+
+/* CTA Section */
+.ctaSection {
+  text-align: center;
+  padding: clamp(40px, 8vw, 80px) 0;
+  background: linear-gradient(to right, #1890ff, #0050b3);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Testimonials */
+.testimonialCard {
+  background: white;
+  padding: clamp(20px, 5vw, 40px);
+  border-radius: 16px;
+  margin: 0 10px;
+  text-align: center;
+  border: 1px solid #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .pricingCard.recommended {
+    transform: none;
+    margin-top: 40px;
+  }
+  
+  .testimonialCard {
+    margin: 0 5px;
+    padding: 20px;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

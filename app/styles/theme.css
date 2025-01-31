@@ -1,0 +1,7 @@
+/* app/styles/theme.css */
+:root {
+  --primary-color: #1890ff;
+  --secondary-color: #0050b3;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --section-spacing: clamp(60px, 8vw, 120px);
+}
